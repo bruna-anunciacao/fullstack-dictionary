@@ -16,10 +16,10 @@ app.use(express.json());
 app.use(cors())
 
 // Routes
-app.use('/', (req, res) => {
-    res.status(200).json({message: "Fullstack Challenge 🏅 - Dictionary"})
-})
-app.use('/user', userRoutes);
+app.get('/', (req, res) => {
+    res.status(200).json({ message: "Fullstack Challenge 🏅 - Dictionary" });
+});
+app.use('/auth', userRoutes);
 // DB config
 const port = process.env.PORT || 3000;
 sequelize
